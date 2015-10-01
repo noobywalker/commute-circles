@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7AA789731BBDA6FE000E35E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA789721BBDA6FE000E35E3 /* AppDelegate.swift */; };
+		7AA789751BBDA6FE000E35E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA789741BBDA6FE000E35E3 /* ViewController.swift */; };
+		7AA789781BBDA6FE000E35E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AA789761BBDA6FE000E35E3 /* Main.storyboard */; };
+		7AA7897A1BBDA6FE000E35E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AA789791BBDA6FE000E35E3 /* Assets.xcassets */; };
+		7AA7897D1BBDA6FE000E35E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AA7897B1BBDA6FE000E35E3 /* LaunchScreen.storyboard */; };
+		7AA789881BBDA6FF000E35E3 /* CommuteCirclesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA789871BBDA6FF000E35E3 /* CommuteCirclesTests.swift */; };
+		7AA789931BBDA6FF000E35E3 /* CommuteCirclesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA789921BBDA6FF000E35E3 /* CommuteCirclesUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7AA789841BBDA6FF000E35E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7AA789671BBDA6FE000E35E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AA7896E1BBDA6FE000E35E3;
+			remoteInfo = CommuteCircles;
+		};
+		7AA7898F1BBDA6FF000E35E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7AA789671BBDA6FE000E35E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AA7896E1BBDA6FE000E35E3;
+			remoteInfo = CommuteCircles;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7AA7896F1BBDA6FE000E35E3 /* CommuteCircles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommuteCircles.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AA789721BBDA6FE000E35E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7AA789741BBDA6FE000E35E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7AA789771BBDA6FE000E35E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7AA789791BBDA6FE000E35E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7AA7897C1BBDA6FE000E35E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7AA7897E1BBDA6FE000E35E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AA789831BBDA6FF000E35E3 /* CommuteCirclesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommuteCirclesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AA789871BBDA6FF000E35E3 /* CommuteCirclesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteCirclesTests.swift; sourceTree = "<group>"; };
+		7AA789891BBDA6FF000E35E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AA7898E1BBDA6FF000E35E3 /* CommuteCirclesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommuteCirclesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AA789921BBDA6FF000E35E3 /* CommuteCirclesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteCirclesUITests.swift; sourceTree = "<group>"; };
+		7AA789941BBDA6FF000E35E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7AA7896C1BBDA6FE000E35E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AA789801BBDA6FF000E35E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AA7898B1BBDA6FF000E35E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7AA789661BBDA6FE000E35E3 = {
+			isa = PBXGroup;
+			children = (
+				7AA789711BBDA6FE000E35E3 /* CommuteCircles */,
+				7AA789861BBDA6FF000E35E3 /* CommuteCirclesTests */,
+				7AA789911BBDA6FF000E35E3 /* CommuteCirclesUITests */,
+				7AA789701BBDA6FE000E35E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7AA789701BBDA6FE000E35E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7AA7896F1BBDA6FE000E35E3 /* CommuteCircles.app */,
+				7AA789831BBDA6FF000E35E3 /* CommuteCirclesTests.xctest */,
+				7AA7898E1BBDA6FF000E35E3 /* CommuteCirclesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7AA789711BBDA6FE000E35E3 /* CommuteCircles */ = {
+			isa = PBXGroup;
+			children = (
+				7AA789721BBDA6FE000E35E3 /* AppDelegate.swift */,
+				7AA789741BBDA6FE000E35E3 /* ViewController.swift */,
+				7AA789761BBDA6FE000E35E3 /* Main.storyboard */,
+				7AA789791BBDA6FE000E35E3 /* Assets.xcassets */,
+				7AA7897B1BBDA6FE000E35E3 /* LaunchScreen.storyboard */,
+				7AA7897E1BBDA6FE000E35E3 /* Info.plist */,
+			);
+			path = CommuteCircles;
+			sourceTree = "<group>";
+		};
+		7AA789861BBDA6FF000E35E3 /* CommuteCirclesTests */ = {
+			isa = PBXGroup;
+			children = (
+				7AA789871BBDA6FF000E35E3 /* CommuteCirclesTests.swift */,
+				7AA789891BBDA6FF000E35E3 /* Info.plist */,
+			);
+			path = CommuteCirclesTests;
+			sourceTree = "<group>";
+		};
+		7AA789911BBDA6FF000E35E3 /* CommuteCirclesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7AA789921BBDA6FF000E35E3 /* CommuteCirclesUITests.swift */,
+				7AA789941BBDA6FF000E35E3 /* Info.plist */,
+			);
+			path = CommuteCirclesUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7AA7896E1BBDA6FE000E35E3 /* CommuteCircles */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AA789971BBDA6FF000E35E3 /* Build configuration list for PBXNativeTarget "CommuteCircles" */;
+			buildPhases = (
+				7AA7896B1BBDA6FE000E35E3 /* Sources */,
+				7AA7896C1BBDA6FE000E35E3 /* Frameworks */,
+				7AA7896D1BBDA6FE000E35E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CommuteCircles;
+			productName = CommuteCircles;
+			productReference = 7AA7896F1BBDA6FE000E35E3 /* CommuteCircles.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7AA789821BBDA6FF000E35E3 /* CommuteCirclesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AA7899A1BBDA6FF000E35E3 /* Build configuration list for PBXNativeTarget "CommuteCirclesTests" */;
+			buildPhases = (
+				7AA7897F1BBDA6FF000E35E3 /* Sources */,
+				7AA789801BBDA6FF000E35E3 /* Frameworks */,
+				7AA789811BBDA6FF000E35E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7AA789851BBDA6FF000E35E3 /* PBXTargetDependency */,
+			);
+			name = CommuteCirclesTests;
+			productName = CommuteCirclesTests;
+			productReference = 7AA789831BBDA6FF000E35E3 /* CommuteCirclesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7AA7898D1BBDA6FF000E35E3 /* CommuteCirclesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AA7899D1BBDA6FF000E35E3 /* Build configuration list for PBXNativeTarget "CommuteCirclesUITests" */;
+			buildPhases = (
+				7AA7898A1BBDA6FF000E35E3 /* Sources */,
+				7AA7898B1BBDA6FF000E35E3 /* Frameworks */,
+				7AA7898C1BBDA6FF000E35E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7AA789901BBDA6FF000E35E3 /* PBXTargetDependency */,
+			);
+			name = CommuteCirclesUITests;
+			productName = CommuteCirclesUITests;
+			productReference = 7AA7898E1BBDA6FF000E35E3 /* CommuteCirclesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7AA789671BBDA6FE000E35E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Swartzware;
+				TargetAttributes = {
+					7AA7896E1BBDA6FE000E35E3 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					7AA789821BBDA6FF000E35E3 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 7AA7896E1BBDA6FE000E35E3;
+					};
+					7AA7898D1BBDA6FF000E35E3 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 7AA7896E1BBDA6FE000E35E3;
+					};
+				};
+			};
+			buildConfigurationList = 7AA7896A1BBDA6FE000E35E3 /* Build configuration list for PBXProject "CommuteCircles" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7AA789661BBDA6FE000E35E3;
+			productRefGroup = 7AA789701BBDA6FE000E35E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7AA7896E1BBDA6FE000E35E3 /* CommuteCircles */,
+				7AA789821BBDA6FF000E35E3 /* CommuteCirclesTests */,
+				7AA7898D1BBDA6FF000E35E3 /* CommuteCirclesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7AA7896D1BBDA6FE000E35E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AA7897D1BBDA6FE000E35E3 /* LaunchScreen.storyboard in Resources */,
+				7AA7897A1BBDA6FE000E35E3 /* Assets.xcassets in Resources */,
+				7AA789781BBDA6FE000E35E3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AA789811BBDA6FF000E35E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AA7898C1BBDA6FF000E35E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7AA7896B1BBDA6FE000E35E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AA789751BBDA6FE000E35E3 /* ViewController.swift in Sources */,
+				7AA789731BBDA6FE000E35E3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AA7897F1BBDA6FF000E35E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AA789881BBDA6FF000E35E3 /* CommuteCirclesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AA7898A1BBDA6FF000E35E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AA789931BBDA6FF000E35E3 /* CommuteCirclesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7AA789851BBDA6FF000E35E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7AA7896E1BBDA6FE000E35E3 /* CommuteCircles */;
+			targetProxy = 7AA789841BBDA6FF000E35E3 /* PBXContainerItemProxy */;
+		};
+		7AA789901BBDA6FF000E35E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7AA7896E1BBDA6FE000E35E3 /* CommuteCircles */;
+			targetProxy = 7AA7898F1BBDA6FF000E35E3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7AA789761BBDA6FE000E35E3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AA789771BBDA6FE000E35E3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7AA7897B1BBDA6FE000E35E3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AA7897C1BBDA6FE000E35E3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7AA789951BBDA6FF000E35E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7AA789961BBDA6FF000E35E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7AA789981BBDA6FF000E35E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CommuteCircles/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = info.sparktown.swift.learn.CommuteCircles;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7AA789991BBDA6FF000E35E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CommuteCircles/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = info.sparktown.swift.learn.CommuteCircles;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7AA7899B1BBDA6FF000E35E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CommuteCirclesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = info.sparktown.swift.learn.CommuteCirclesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CommuteCircles.app/CommuteCircles";
+			};
+			name = Debug;
+		};
+		7AA7899C1BBDA6FF000E35E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CommuteCirclesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = info.sparktown.swift.learn.CommuteCirclesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CommuteCircles.app/CommuteCircles";
+			};
+			name = Release;
+		};
+		7AA7899E1BBDA6FF000E35E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CommuteCirclesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = info.sparktown.swift.learn.CommuteCirclesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CommuteCircles;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		7AA7899F1BBDA6FF000E35E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CommuteCirclesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = info.sparktown.swift.learn.CommuteCirclesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CommuteCircles;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7AA7896A1BBDA6FE000E35E3 /* Build configuration list for PBXProject "CommuteCircles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AA789951BBDA6FF000E35E3 /* Debug */,
+				7AA789961BBDA6FF000E35E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7AA789971BBDA6FF000E35E3 /* Build configuration list for PBXNativeTarget "CommuteCircles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AA789981BBDA6FF000E35E3 /* Debug */,
+				7AA789991BBDA6FF000E35E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7AA7899A1BBDA6FF000E35E3 /* Build configuration list for PBXNativeTarget "CommuteCirclesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AA7899B1BBDA6FF000E35E3 /* Debug */,
+				7AA7899C1BBDA6FF000E35E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7AA7899D1BBDA6FF000E35E3 /* Build configuration list for PBXNativeTarget "CommuteCirclesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AA7899E1BBDA6FF000E35E3 /* Debug */,
+				7AA7899F1BBDA6FF000E35E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7AA789671BBDA6FE000E35E3 /* Project object */;
+}
