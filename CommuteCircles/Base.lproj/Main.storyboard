@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CommuteCircles" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,72 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JAJ-pn-9II">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryl-WZ-TnX">
+                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfr-gm-gVz">
+                                <rect key="frame" x="0.0" y="541" width="600" height="59"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USh-1W-1Hq">
+                                        <rect key="frame" x="263" y="15" width="74" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Set Radius"/>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="USh-1W-1Hq" firstAttribute="centerY" secondItem="wfr-gm-gVz" secondAttribute="centerY" id="3l2-bn-DFb"/>
+                                    <constraint firstItem="USh-1W-1Hq" firstAttribute="centerX" secondItem="wfr-gm-gVz" secondAttribute="centerX" id="gxx-Bc-NvB"/>
+                                    <constraint firstAttribute="height" constant="59" id="sYP-CG-5rv"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Im0-tw-y0w">
+                                <rect key="frame" x="8" y="505" width="584" height="29"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="SatelliteFlyover"/>
+                                    <segment title="HybridFlyover"/>
+                                </segments>
+                                <color key="tintColor" red="0.20000000300000001" green="0.60000002379999995" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="4kE-CP-CAF"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JAJ-pn-9II" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="78l-g8-qZi"/>
+                            <constraint firstItem="wfr-gm-gVz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="HHE-Pl-Haf"/>
+                            <constraint firstItem="JAJ-pn-9II" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="KqP-1G-Mna"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JAJ-pn-9II" secondAttribute="bottom" id="Maa-kl-1PJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JAJ-pn-9II" secondAttribute="trailing" constant="-20" id="Vb4-8L-nNj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wfr-gm-gVz" secondAttribute="trailing" constant="-20" id="WjA-i1-lJ8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wfr-gm-gVz" secondAttribute="bottom" id="Xg7-lv-C5W"/>
+                            <constraint firstItem="wfr-gm-gVz" firstAttribute="top" secondItem="Im0-tw-y0w" secondAttribute="bottom" constant="8" id="rgL-hj-9tf"/>
+                            <constraint firstItem="Im0-tw-y0w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-12" id="xA5-SC-ikW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Im0-tw-y0w" secondAttribute="trailing" constant="-12" id="z50-Vn-kdA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="compassBtn" destination="Ryl-WZ-TnX" id="fDA-4c-sve"/>
+                        <outlet property="mapTypeChooser" destination="Im0-tw-y0w" id="AGR-oa-4P1"/>
+                        <outlet property="mapView" destination="JAJ-pn-9II" id="W5j-o1-Imp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="820" y="647"/>
         </scene>
     </scenes>
 </document>
