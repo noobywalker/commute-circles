@@ -35,6 +35,7 @@
                                         <state key="normal" title="Set Radius"/>
                                         <connections>
                                             <action selector="setRadiusEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tvq-FI-hZG"/>
+                                            <segue destination="srh-Ha-nEh" kind="presentation" id="jgj-Bt-q3X"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -92,7 +93,90 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="820" y="647"/>
+            <point key="canvasLocation" x="380" y="443"/>
+        </scene>
+        <!--Radius Edit View Controller-->
+        <scene sceneID="HwA-xU-F7q">
+            <objects>
+                <viewController id="srh-Ha-nEh" customClass="RadiusEditViewController" customModule="CommuteCircles" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tJx-ke-GoX"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rj9-Hq-bRQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8hs-ct-pmy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="7" minValue="0.0" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="Y7X-83-4jo">
+                                <rect key="frame" x="42" y="265" width="516" height="31"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="r7t-5a-HBE"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="srh-Ha-nEh" eventType="valueChanged" id="TuE-dq-GA6"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius (miles)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTm-7v-qhc">
+                                <rect key="frame" x="240" y="319" width="121" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="fTZ-OO-qYK"/>
+                                    <constraint firstAttribute="width" constant="52" id="gbo-ng-QQM"/>
+                                    <constraint firstAttribute="width" priority="750" constant="121" id="mhK-bp-UZJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="gbo-ng-QQM"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZM-Dk-8Na">
+                                <rect key="frame" x="539" y="28" width="37" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hfS-hI-rJJ"/>
+                                    <constraint firstAttribute="width" constant="37" id="zA8-lL-aJT"/>
+                                </constraints>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="59U-Gd-xkb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AA3-VM-E5S">
+                                <rect key="frame" x="268" y="205" width="65" height="36"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="GZM-Dk-8Na" secondAttribute="trailing" constant="4" id="1UA-AI-Vg0"/>
+                            <constraint firstItem="GZM-Dk-8Na" firstAttribute="top" secondItem="tJx-ke-GoX" secondAttribute="bottom" constant="8" id="7BW-GD-ve8"/>
+                            <constraint firstItem="AA3-VM-E5S" firstAttribute="centerX" secondItem="Y7X-83-4jo" secondAttribute="centerX" id="Gfv-hM-G5U"/>
+                            <constraint firstItem="Y7X-83-4jo" firstAttribute="top" secondItem="AA3-VM-E5S" secondAttribute="bottom" constant="24" id="HUc-ae-tWa"/>
+                            <constraint firstItem="Y7X-83-4jo" firstAttribute="leading" secondItem="8hs-ct-pmy" secondAttribute="leadingMargin" constant="24" id="bm1-Kt-drj"/>
+                            <constraint firstItem="Y7X-83-4jo" firstAttribute="centerX" secondItem="8hs-ct-pmy" secondAttribute="centerX" id="gCq-Q0-qvZ"/>
+                            <constraint firstItem="fTm-7v-qhc" firstAttribute="centerX" secondItem="8hs-ct-pmy" secondAttribute="centerX" id="iEb-Gd-V9g"/>
+                            <constraint firstItem="fTm-7v-qhc" firstAttribute="top" secondItem="Y7X-83-4jo" secondAttribute="bottom" constant="24" id="jDs-xY-9U7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y7X-83-4jo" secondAttribute="trailing" constant="24" id="qXB-Tw-lv0"/>
+                            <constraint firstItem="Y7X-83-4jo" firstAttribute="centerY" secondItem="8hs-ct-pmy" secondAttribute="centerY" constant="-20" id="s53-nF-S0Z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="slider" destination="Y7X-83-4jo" id="xlB-Qm-ICq"/>
+                        <outlet property="valueLabel" destination="AA3-VM-E5S" id="bpI-qA-RmE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zBH-8y-ID0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1133" y="443"/>
         </scene>
     </scenes>
 </document>

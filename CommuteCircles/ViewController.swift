@@ -49,15 +49,16 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         setInitialRegion()
         let annos = createInitialAnnotations()
-
-//        pins = createInitialPins(annos);
+        let overlays = createInitialOverlays()
         mapView.addAnnotations(annos)
+        mapView.showAnnotations(annos, animated: true)
+        mapView.addOverlays(overlays)
         
         self.setupMapCamera()
         self.updateCompassBtn()
         
         centers = [adams269, lafayette260]
-        drawRegions()
+        drawOverlays()
     }
     
     private func setInitialRegion() {
@@ -76,16 +77,16 @@ class ViewController: UIViewController, MKMapViewDelegate {
         return [annod1, annod2]
     }
     
-//    private func createInitialPins( annotations: [MKPointAnnotation]) -> [MKPinAnnotationView] {
-//        let allPins = [MKPinAnnotationView]()
-//        for ano in annotations {
-//            let pin = MKPinAnnotationView()
-//            pin.annotation
-//        }
-//        let pin1 = MKPinAnnotationView()
-//        pin1.annotation = annotations[0]
-//        return [pin1]
-//    }
+    class func milesToMeters( miles: Double ) -> Double {
+        return miles * 5280.0 / 3.2808
+    }
+    
+    private func createInitialOverlays() -> [MKOverlay] {
+        let x = MapCircle(centerCoordinate: adams269, radius: ViewController.milesToMeters(7.0))
+        x.name = "Adams St radius"
+        x.color = UIColor.yellowColor()
+        return [x]
+    }
     
     private func setupMapCamera() {
         // mapView.camera is a MKMapCamera
@@ -107,7 +108,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     }
     
     //    private func handleDoubleTap
-    private func drawRegions() {
+    private func drawOverlays() {
         // for each center, draw a shaded circle
         //        for coord in centers {
         //
