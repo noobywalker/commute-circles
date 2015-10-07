@@ -17,9 +17,9 @@ class ViewController: UIViewController, MKMapViewDelegate {
     let adams269 = CLLocationCoordinate2DMake(42.356476, -71.197761)
     let lafayette260 = CLLocationCoordinate2DMake(42.509920, -70.892136)
     
-    var radiusInMiles = 7.0
+    var radiusInMiles: Float = 7.0
     var centers = [CLLocationCoordinate2D]()
-//    var pins = [MKPinAnnotationView]()
+    //    var pins = [MKPinAnnotationView]()
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var compassBtn: UIButton!
@@ -44,21 +44,23 @@ class ViewController: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    class func milesToMeters( miles: Float ) -> Float {
+        return miles * 5280.0 / 3.2808
+    }
+    
     func initMap () {
         mapView.delegate = self
         
         setInitialRegion()
         let annos = createInitialAnnotations()
-        let overlays = createInitialOverlays()
         mapView.addAnnotations(annos)
         mapView.showAnnotations(annos, animated: true)
-        mapView.addOverlays(overlays)
+        let circle2 = MKCircle(centerCoordinate: adams269, radius: CLLocationDistance(ViewController.milesToMeters(7.0)))
+        mapView.addOverlay( circle2 )
         
         self.setupMapCamera()
-        self.updateCompassBtn()
         
         centers = [adams269, lafayette260]
-        drawOverlays()
     }
     
     private func setInitialRegion() {
@@ -77,14 +79,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
         return [annod1, annod2]
     }
     
-    class func milesToMeters( miles: Double ) -> Double {
-        return miles * 5280.0 / 3.2808
-    }
-    
     private func createInitialOverlays() -> [MKOverlay] {
-        let x = MapCircle(centerCoordinate: adams269, radius: ViewController.milesToMeters(7.0))
-        x.name = "Adams St radius"
-        x.color = UIColor.yellowColor()
+        let x = MKCircle(centerCoordinate: adams269, radius: Double(ViewController.milesToMeters(radiusInMiles)))
         return [x]
     }
     
@@ -93,26 +89,6 @@ class ViewController: UIViewController, MKMapViewDelegate {
         mapView.camera.altitude = 40000
         mapView.camera.pitch = 45
         mapView.camera.heading = 225
-    }
-    
-    private func updateCompassBtn() {
-        
-        // shown
-        if mapView.showsCompass == true {
-            compassBtn.setTitle("Hide Compass", forState: UIControlState.Normal)
-        }
-            // hidden
-        else {
-            compassBtn.setTitle("Show Compass", forState: UIControlState.Normal)
-        }
-    }
-    
-    //    private func handleDoubleTap
-    private func drawOverlays() {
-        // for each center, draw a shaded circle
-        //        for coord in centers {
-        //
-        //        }
     }
     
     @IBAction func segmentChanged(sender: UISegmentedControl) {
@@ -130,8 +106,27 @@ class ViewController: UIViewController, MKMapViewDelegate {
         self.setupMapCamera()
         
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let nextVC: RadiusEditViewController = segue.destinationViewController as! RadiusEditViewController
+        nextVC.radius = radiusInMiles
+        
+    }
+    
     @IBAction func setRadiusEvent(sender: UIButton) {
         print("Current radius is \(radiusInMiles) miles")
+        
+        
+    }
+    // MARK: - delegate
+    
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+            let circle = MKCircleRenderer(overlay: overlay)
+            circle.strokeColor = UIColor.redColor()
+            circle.fillColor = UIColor(red: 255, green: 0, blue: 0, alpha: 0.1)
+            circle.lineWidth = 1
+            return circle
     }
 }
+
 

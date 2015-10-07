@@ -16,6 +16,7 @@
 		7AA789931BBDA6FF000E35E3 /* CommuteCirclesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA789921BBDA6FF000E35E3 /* CommuteCirclesUITests.swift */; };
 		DD2F105D1BC5AEB800176D7A /* MapCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2F105C1BC5AEB800176D7A /* MapCircle.swift */; settings = {ASSET_TAGS = (); }; };
 		DD2F10611BC5B7C400176D7A /* RadiusEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2F10601BC5B7C400176D7A /* RadiusEditViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		DD2F10631BC5CA7200176D7A /* CircleOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2F10621BC5CA7200176D7A /* CircleOverlay.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		7AA789941BBDA6FF000E35E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD2F105C1BC5AEB800176D7A /* MapCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCircle.swift; sourceTree = "<group>"; };
 		DD2F10601BC5B7C400176D7A /* RadiusEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusEditViewController.swift; sourceTree = "<group>"; };
+		DD2F10621BC5CA7200176D7A /* CircleOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleOverlay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +106,12 @@
 				DD2F105C1BC5AEB800176D7A /* MapCircle.swift */,
 				7AA789721BBDA6FE000E35E3 /* AppDelegate.swift */,
 				7AA789741BBDA6FE000E35E3 /* ViewController.swift */,
+				DD2F10621BC5CA7200176D7A /* CircleOverlay.swift */,
+				DD2F10601BC5B7C400176D7A /* RadiusEditViewController.swift */,
 				7AA789761BBDA6FE000E35E3 /* Main.storyboard */,
 				7AA789791BBDA6FE000E35E3 /* Assets.xcassets */,
 				7AA7897B1BBDA6FE000E35E3 /* LaunchScreen.storyboard */,
 				7AA7897E1BBDA6FE000E35E3 /* Info.plist */,
-				DD2F10601BC5B7C400176D7A /* RadiusEditViewController.swift */,
 			);
 			path = CommuteCircles;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				7AA789751BBDA6FE000E35E3 /* ViewController.swift in Sources */,
 				DD2F105D1BC5AEB800176D7A /* MapCircle.swift in Sources */,
 				DD2F10611BC5B7C400176D7A /* RadiusEditViewController.swift in Sources */,
+				DD2F10631BC5CA7200176D7A /* CircleOverlay.swift in Sources */,
 				7AA789731BBDA6FE000E35E3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

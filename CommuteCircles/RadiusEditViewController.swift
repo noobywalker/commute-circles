@@ -13,10 +13,20 @@ class RadiusEditViewController: UIViewController {
     
     @IBOutlet var slider: UISlider!
     @IBOutlet var valueLabel: UILabel!
+    var radius: Float = 0.0
     
+    override func viewDidLoad() {
+        slider.value = radius
+        valueLabel.text = "\(radius)"
+    }
     
     @IBAction func sliderChanged(sender: UISlider) {
-        let r = sender.value
-        valueLabel.text = "\(r)"
+        radius = sender.value
+        valueLabel.text = "\(radius)"
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let nextVC = segue.destinationViewController as! ViewController
+        nextVC.radiusInMiles = radius
     }
 }

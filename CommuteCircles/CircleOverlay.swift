@@ -1,5 +1,5 @@
 //
-//  MapCircle.swift
+//  CircleOverlay.swift
 //  CommuteCircles
 //
 //  Created by Ray Swartz on 10/7/15.
@@ -9,11 +9,10 @@
 import UIKit
 import MapKit
 
-// conforms to MKOverlay
-
-class MapCircle: MKCircle {
+class CircleOverlay: MKOverlayRenderer {
     
-    var name: String?
-    var color: UIColor?
+    override init(overlay:MKOverlay) {
+        super.init(overlay: overlay)
+    }
     
 }
