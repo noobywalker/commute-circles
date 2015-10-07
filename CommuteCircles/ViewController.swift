@@ -19,7 +19,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     var radiusInMiles = 7.0
     var centers = [CLLocationCoordinate2D]()
-    var pins = [MKPinAnnotationView]()
+//    var pins = [MKPinAnnotationView]()
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var compassBtn: UIButton!
@@ -50,7 +50,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         setInitialRegion()
         let annos = createInitialAnnotations()
 
-        pins = createInitialPins(annos);
+//        pins = createInitialPins(annos);
         mapView.addAnnotations(annos)
         
         self.setupMapCamera()
@@ -65,18 +65,27 @@ class ViewController: UIViewController, MKMapViewDelegate {
     }
     
     private func createInitialAnnotations()  -> [MKPointAnnotation] {
-        let annod = MKPointAnnotation()
-        annod.title = "Ray"
-        annod.subtitle = "269 Adams St, Newton"
-        annod.coordinate = adams269
-        return [annod]
+        let annod1 = MKPointAnnotation()
+        annod1.title = "Ray"
+        annod1.subtitle = "269 Adams St, Newton"
+        annod1.coordinate = adams269
+        let annod2 = MKPointAnnotation()
+        annod2.title = "Pam"
+        annod2.subtitle = "260 Lafayette St, Salem"
+        annod2.coordinate = lafayette260
+        return [annod1, annod2]
     }
     
-    private func createInitialPins( annotations: [MKPointAnnotation]) -> [MKPinAnnotationView] {
-        let pin = MKPinAnnotationView()
-        pin.annotation = annotations[0]
-        return [pin]
-    }
+//    private func createInitialPins( annotations: [MKPointAnnotation]) -> [MKPinAnnotationView] {
+//        let allPins = [MKPinAnnotationView]()
+//        for ano in annotations {
+//            let pin = MKPinAnnotationView()
+//            pin.annotation
+//        }
+//        let pin1 = MKPinAnnotationView()
+//        pin1.annotation = annotations[0]
+//        return [pin1]
+//    }
     
     private func setupMapCamera() {
         // mapView.camera is a MKMapCamera
