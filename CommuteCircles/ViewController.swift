@@ -22,8 +22,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
     //    var pins = [MKPinAnnotationView]()
     
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var compassBtn: UIButton!
     @IBOutlet weak var mapTypeChooser: UISegmentedControl!
+    @IBOutlet var editRadiusBtn: UIButton!
     weak var delegate: MKMapViewDelegate?
     var locationManager: CLLocationManager!
     
@@ -36,7 +36,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         delegate = self
         initMap()
-        //        let doubleTapG = UITapGestureRecognizer(target: mapView, action: initMap())
+        editRadiusBtn.titleLabel?.text = "Radius: \(radiusInMiles)"
+        view.setNeedsLayout()
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,7 +56,10 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let annos = createInitialAnnotations()
         mapView.addAnnotations(annos)
         mapView.showAnnotations(annos, animated: true)
-        let circle2 = MKCircle(centerCoordinate: adams269, radius: CLLocationDistance(ViewController.milesToMeters(7.0)))
+        
+        let circle1 = MKCircle(centerCoordinate: lafayette260, radius: CLLocationDistance(ViewController.milesToMeters(radiusInMiles)))
+        let circle2 = MKCircle(centerCoordinate: adams269, radius: CLLocationDistance(ViewController.milesToMeters(radiusInMiles)))
+        mapView.addOverlay( circle1 )
         mapView.addOverlay( circle2 )
         
         self.setupMapCamera()

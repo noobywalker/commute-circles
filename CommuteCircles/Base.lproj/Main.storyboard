@@ -22,12 +22,13 @@
                                 <animations/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfr-gm-gVz">
-                                <rect key="frame" x="250" y="572" width="100" height="28"/>
+                                <rect key="frame" x="215" y="572" width="170" height="28"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USh-1W-1Hq">
-                                        <rect key="frame" x="13" y="-1" width="74" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USh-1W-1Hq">
+                                        <rect key="frame" x="27" y="-1" width="117" height="30"/>
                                         <animations/>
-                                        <state key="normal" title="Set Radius"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Radius: 7.00000"/>
                                         <connections>
                                             <action selector="setRadiusEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tvq-FI-hZG"/>
                                             <segue destination="srh-Ha-nEh" kind="presentation" id="jgj-Bt-q3X"/>
@@ -40,7 +41,7 @@
                                     <constraint firstItem="USh-1W-1Hq" firstAttribute="centerY" secondItem="wfr-gm-gVz" secondAttribute="centerY" id="3l2-bn-DFb"/>
                                     <constraint firstItem="USh-1W-1Hq" firstAttribute="centerX" secondItem="wfr-gm-gVz" secondAttribute="centerX" id="gxx-Bc-NvB"/>
                                     <constraint firstAttribute="height" priority="750" constant="28" id="sYP-CG-5rv"/>
-                                    <constraint firstAttribute="width" constant="100" id="zd4-hE-s5Z"/>
+                                    <constraint firstAttribute="width" priority="750" constant="170" id="zd4-hE-s5Z"/>
                                 </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Im0-tw-y0w">
@@ -81,6 +82,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="editRadiusBtn" destination="USh-1W-1Hq" id="fCu-tp-q83"/>
                         <outlet property="mapTypeChooser" destination="Im0-tw-y0w" id="AGR-oa-4P1"/>
                         <outlet property="mapView" destination="JAJ-pn-9II" id="W5j-o1-Imp"/>
                     </connections>
