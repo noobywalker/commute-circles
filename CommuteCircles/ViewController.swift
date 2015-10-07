@@ -13,16 +13,19 @@ import UIKit
 import MapKit
 
 class ViewController: UIViewController, MKMapViewDelegate {
-
+    
     let adams269 = CLLocationCoordinate2DMake(42.356476, -71.197761)
     let lafayette260 = CLLocationCoordinate2DMake(42.509920, -70.892136)
     
     var radiusInMiles = 7.0
     var centers = [CLLocationCoordinate2D]()
+    var pins = [MKPinAnnotationView]()
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var compassBtn: UIButton!
     @IBOutlet weak var mapTypeChooser: UISegmentedControl!
+    weak var delegate: MKMapViewDelegate?
+    var locationManager: CLLocationManager!
     
     let newtonSalemRegion = MKCoordinateRegionMake(
         CLLocationCoordinate2DMake(42.437897, -71.035688),
@@ -31,8 +34,9 @@ class ViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        delegate = self
         initMap()
-//        let doubleTapG = UITapGestureRecognizer(target: mapView, action: initMap())
+        //        let doubleTapG = UITapGestureRecognizer(target: mapView, action: initMap())
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,7 +47,11 @@ class ViewController: UIViewController, MKMapViewDelegate {
     func initMap () {
         mapView.delegate = self
         
-        mapView.setRegion(newtonSalemRegion, animated: true)
+        setInitialRegion()
+        let annos = createInitialAnnotations()
+
+        pins = createInitialPins(annos);
+        mapView.addAnnotations(annos)
         
         self.setupMapCamera()
         self.updateCompassBtn()
@@ -52,8 +60,26 @@ class ViewController: UIViewController, MKMapViewDelegate {
         drawRegions()
     }
     
+    private func setInitialRegion() {
+        mapView.setRegion(newtonSalemRegion, animated: true)
+    }
+    
+    private func createInitialAnnotations()  -> [MKPointAnnotation] {
+        let annod = MKPointAnnotation()
+        annod.title = "Ray"
+        annod.subtitle = "269 Adams St, Newton"
+        annod.coordinate = adams269
+        return [annod]
+    }
+    
+    private func createInitialPins( annotations: [MKPointAnnotation]) -> [MKPinAnnotationView] {
+        let pin = MKPinAnnotationView()
+        pin.annotation = annotations[0]
+        return [pin]
+    }
+    
     private func setupMapCamera() {
-        
+        // mapView.camera is a MKMapCamera
         mapView.camera.altitude = 40000
         mapView.camera.pitch = 45
         mapView.camera.heading = 225
@@ -71,12 +97,12 @@ class ViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
-//    private func handleDoubleTap
+    //    private func handleDoubleTap
     private func drawRegions() {
         // for each center, draw a shaded circle
-//        for coord in centers {
-//            
-//        }
+        //        for coord in centers {
+        //
+        //        }
     }
     
     @IBAction func segmentChanged(sender: UISegmentedControl) {
@@ -92,7 +118,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         }
         
         self.setupMapCamera()
-
+        
     }
     @IBAction func setRadiusEvent(sender: UIButton) {
         print("Current radius is \(radiusInMiles) miles")
