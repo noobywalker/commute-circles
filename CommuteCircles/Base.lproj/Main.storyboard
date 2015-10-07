@@ -27,12 +27,15 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfr-gm-gVz">
-                                <rect key="frame" x="0.0" y="541" width="600" height="59"/>
+                                <rect key="frame" x="250" y="572" width="100" height="28"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USh-1W-1Hq">
-                                        <rect key="frame" x="263" y="15" width="74" height="30"/>
+                                        <rect key="frame" x="13" y="-1" width="74" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Set Radius"/>
+                                        <connections>
+                                            <action selector="setRadiusEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tvq-FI-hZG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -40,11 +43,12 @@
                                 <constraints>
                                     <constraint firstItem="USh-1W-1Hq" firstAttribute="centerY" secondItem="wfr-gm-gVz" secondAttribute="centerY" id="3l2-bn-DFb"/>
                                     <constraint firstItem="USh-1W-1Hq" firstAttribute="centerX" secondItem="wfr-gm-gVz" secondAttribute="centerX" id="gxx-Bc-NvB"/>
-                                    <constraint firstAttribute="height" constant="59" id="sYP-CG-5rv"/>
+                                    <constraint firstAttribute="height" priority="750" constant="28" id="sYP-CG-5rv"/>
+                                    <constraint firstAttribute="width" constant="100" id="zd4-hE-s5Z"/>
                                 </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Im0-tw-y0w">
-                                <rect key="frame" x="8" y="505" width="584" height="29"/>
+                                <rect key="frame" x="8" y="536" width="584" height="29"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <segments>
@@ -62,16 +66,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JAJ-pn-9II" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="78l-g8-qZi"/>
-                            <constraint firstItem="wfr-gm-gVz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="HHE-Pl-Haf"/>
+                            <constraint firstItem="wfr-gm-gVz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="HHE-Pl-Haf"/>
                             <constraint firstItem="JAJ-pn-9II" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="KqP-1G-Mna"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JAJ-pn-9II" secondAttribute="bottom" id="Maa-kl-1PJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JAJ-pn-9II" secondAttribute="trailing" constant="-20" id="Vb4-8L-nNj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wfr-gm-gVz" secondAttribute="trailing" constant="-20" id="WjA-i1-lJ8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wfr-gm-gVz" secondAttribute="trailing" constant="8" id="WjA-i1-lJ8"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wfr-gm-gVz" secondAttribute="bottom" id="Xg7-lv-C5W"/>
+                            <constraint firstItem="wfr-gm-gVz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dsu-nW-YZ0"/>
                             <constraint firstItem="wfr-gm-gVz" firstAttribute="top" secondItem="Im0-tw-y0w" secondAttribute="bottom" constant="8" id="rgL-hj-9tf"/>
                             <constraint firstItem="Im0-tw-y0w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-12" id="xA5-SC-ikW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Im0-tw-y0w" secondAttribute="trailing" constant="-12" id="z50-Vn-kdA"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="HHE-Pl-Haf"/>
+                                <exclude reference="WjA-i1-lJ8"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="compassBtn" destination="Ryl-WZ-TnX" id="fDA-4c-sve"/>

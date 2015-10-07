@@ -6,11 +6,19 @@
 //  Created by Ray Swartz on 10/1/15.
 //  Copyright © 2015 Swartzware. All rights reserved.
 //
+//  Should I use MKMapCamera?
+//
 
 import UIKit
 import MapKit
 
 class ViewController: UIViewController, MKMapViewDelegate {
+
+    let adams269 = CLLocationCoordinate2DMake(42.356476, -71.197761)
+    let lafayette260 = CLLocationCoordinate2DMake(42.509920, -70.892136)
+    
+    var radiusInMiles = 7.0
+    var centers = [CLLocationCoordinate2D]()
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var compassBtn: UIButton!
@@ -24,6 +32,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         initMap()
+//        let doubleTapG = UITapGestureRecognizer(target: mapView, action: initMap())
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,6 +48,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
         self.setupMapCamera()
         self.updateCompassBtn()
         
+        centers = [adams269, lafayette260]
+        drawRegions()
     }
     
     private func setupMapCamera() {
@@ -60,8 +71,17 @@ class ViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
+//    private func handleDoubleTap
+    private func drawRegions() {
+        // for each center, draw a shaded circle
+//        for coord in centers {
+//            
+//        }
+    }
+    
     @IBAction func segmentChanged(sender: UISegmentedControl) {
         
+        mapView.setRegion(newtonSalemRegion, animated: true)
         switch sender.selectedSegmentIndex {
         case 1:
             mapView.mapType = MKMapType.SatelliteFlyover
@@ -73,6 +93,9 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         self.setupMapCamera()
 
+    }
+    @IBAction func setRadiusEvent(sender: UIButton) {
+        print("Current radius is \(radiusInMiles) miles")
     }
 }
 
