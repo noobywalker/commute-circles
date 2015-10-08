@@ -36,9 +36,12 @@ class ViewController: UIViewController, MKMapViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         delegate = self
         initMap()
-        editRadiusBtn.titleLabel?.text = "Radius: \(radiusInMiles)"
-        view.setNeedsLayout()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        editRadiusBtn.setTitle("Radius: \(radiusInMiles) mi", forState: UIControlState.Normal)
+   }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
