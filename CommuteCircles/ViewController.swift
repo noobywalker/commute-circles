@@ -48,6 +48,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // static method
     class func milesToMeters( miles: Float ) -> Float {
         return miles * 5280.0 / 3.2808
     }
@@ -120,11 +121,6 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
     }
     
-    @IBAction func setRadiusEvent(sender: UIButton) {
-        print("Current radius is \(radiusInMiles) miles")
-        
-        
-    }
     // MARK: - delegate
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {

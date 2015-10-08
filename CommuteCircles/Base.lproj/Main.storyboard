@@ -21,27 +21,27 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </mapView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfr-gm-gVz">
-                                <rect key="frame" x="215" y="572" width="170" height="28"/>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfr-gm-gVz">
+                                <rect key="frame" x="228" y="572" width="144" height="28"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USh-1W-1Hq">
-                                        <rect key="frame" x="27" y="-1" width="117" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USh-1W-1Hq">
+                                        <rect key="frame" x="12" y="-1" width="120" height="30"/>
                                         <animations/>
+                                        <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Radius: 7.00000"/>
                                         <connections>
-                                            <action selector="setRadiusEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tvq-FI-hZG"/>
                                             <segue destination="srh-Ha-nEh" kind="presentation" id="jgj-Bt-q3X"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="USh-1W-1Hq" firstAttribute="centerY" secondItem="wfr-gm-gVz" secondAttribute="centerY" id="3l2-bn-DFb"/>
                                     <constraint firstItem="USh-1W-1Hq" firstAttribute="centerX" secondItem="wfr-gm-gVz" secondAttribute="centerX" id="gxx-Bc-NvB"/>
                                     <constraint firstAttribute="height" priority="750" constant="28" id="sYP-CG-5rv"/>
-                                    <constraint firstAttribute="width" priority="750" constant="170" id="zd4-hE-s5Z"/>
+                                    <constraint firstAttribute="width" priority="750" constant="144" id="zd4-hE-s5Z"/>
                                 </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Im0-tw-y0w">
