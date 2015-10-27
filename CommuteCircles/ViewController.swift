@@ -14,12 +14,13 @@ import MapKit
 
 class ViewController: UIViewController, MKMapViewDelegate {
     
+    @IBOutlet var tapRecognizer: UITapGestureRecognizer!
     let adams269 = CLLocationCoordinate2DMake(42.356476, -71.197761)
     let lafayette260 = CLLocationCoordinate2DMake(42.509920, -70.892136)
     
     var radiusInMiles: Float = 7.0
     var centers = [CLLocationCoordinate2D]()
-    //    var pins = [MKPinAnnotationView]()
+    var overlays = [MKOverlay]()
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var mapTypeChooser: UISegmentedControl!
@@ -63,12 +64,14 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         let circle1 = MKCircle(centerCoordinate: lafayette260, radius: CLLocationDistance(ViewController.milesToMeters(radiusInMiles)))
         let circle2 = MKCircle(centerCoordinate: adams269, radius: CLLocationDistance(ViewController.milesToMeters(radiusInMiles)))
-        mapView.addOverlay( circle1 )
-        mapView.addOverlay( circle2 )
+        overlays.append(circle1)
+        overlays.append(circle2)
+        mapView.addOverlays(overlays)
         
         self.setupMapCamera()
         
         centers = [adams269, lafayette260]
+        tapRecognizer.addTarget(self, action: "didSingleTap:")
     }
     
     private func setInitialRegion() {
@@ -96,7 +99,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         // mapView.camera is a MKMapCamera
         mapView.camera.altitude = 40000
         mapView.camera.pitch = 45
-        mapView.camera.heading = 225
+        mapView.camera.heading = 225 + 180
     }
     
     @IBAction func segmentChanged(sender: UISegmentedControl) {
@@ -119,6 +122,21 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let nextVC: RadiusEditViewController = segue.destinationViewController as! RadiusEditViewController
         nextVC.radius = radiusInMiles
         
+    }
+    
+    func didSingleTap(gestureRecognizer: UIGestureRecognizer) {
+        print("didSingle")
+        // get tap location
+        let gesturePoint = gestureRecognizer.locationInView(mapView)
+        let mapPoint = mapView.convertPoint(gesturePoint, toCoordinateFromView: mapView)
+        print(mapPoint)
+        let tapcircle = MKCircle(centerCoordinate: mapPoint, radius: CLLocationDistance(ViewController.milesToMeters(radiusInMiles)))
+        mapView.removeOverlays(overlays)
+        overlays = [MKOverlay]()
+        overlays.append(tapcircle)
+        centers = [CLLocationCoordinate2D]()
+        centers.append(mapPoint)
+        mapView.addOverlay(tapcircle)
     }
     
     // MARK: - delegate
