@@ -19,6 +19,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     var radiusInMiles: Float = 7.0
     var centers = [CLLocationCoordinate2D]()
+    var destinations = [CLLocationCoordinate2D]()
     var overlays = [MKOverlay]()
     
     @IBOutlet weak var mapView: MKMapView!
@@ -27,9 +28,15 @@ class ViewController: UIViewController, MKMapViewDelegate {
     weak var delegate: MKMapViewDelegate?
     var locationManager: CLLocationManager!
     
-    let newtonSalemRegion = MKCoordinateRegionMake(
-        CLLocationCoordinate2DMake(42.437897, -71.035688),
+    /*
+    How to find lat, long from map
+    Use Google Maps, drop pin, copy from info box.
+    */
+    let bostonSalemRegion = MKCoordinateRegionMake(
+        CLLocationCoordinate2DMake(42.428728, -70.981737),
         MKCoordinateSpanMake(0.6, 0.6))
+    
+    var workingRegion: MKCoordinateRegion!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,19 +69,24 @@ class ViewController: UIViewController, MKMapViewDelegate {
         mapView.showAnnotations(annos, animated: true)
         
         let circle1 = MKCircle(centerCoordinate: lafayette260, radius: CLLocationDistance(ViewController.milesToMeters(radiusInMiles)))
-        let circle2 = MKCircle(centerCoordinate: adams269, radius: CLLocationDistance(ViewController.milesToMeters(radiusInMiles)))
         overlays.append(circle1)
-        overlays.append(circle2)
         mapView.addOverlays(overlays)
         
         self.setupMapCamera()
         
-        centers = [adams269, lafayette260]
+        centers = [lafayette260]
         tapRecognizer.addTarget(self, action: "didSingleTap:")
     }
     
     private func setInitialRegion() {
-        mapView.setRegion(newtonSalemRegion, animated: true)
+        mapView.setRegion(bostonSalemRegion, animated: true)
+        workingRegion = bostonSalemRegion
+    }
+    
+    private func setWorkingRegion() {
+        if let region = workingRegion {
+            mapView.setRegion(region, animated: true)
+        }
     }
     
     private func createInitialAnnotations()  -> [MKPointAnnotation] {
@@ -90,7 +102,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     }
     
     private func createInitialOverlays() -> [MKOverlay] {
-        let x = MKCircle(centerCoordinate: adams269, radius: Double(ViewController.milesToMeters(radiusInMiles)))
+        let x = MKCircle(centerCoordinate: lafayette260, radius: Double(ViewController.milesToMeters(radiusInMiles)))
         return [x]
     }
     
@@ -98,12 +110,12 @@ class ViewController: UIViewController, MKMapViewDelegate {
         // mapView.camera is a MKMapCamera
         mapView.camera.altitude = 40000
         mapView.camera.pitch = 45
-        mapView.camera.heading = 225 + 180
+        mapView.camera.heading = 30     // 30 degrees east of true north
     }
     
     @IBAction func segmentChanged(sender: UISegmentedControl) {
         
-        mapView.setRegion(newtonSalemRegion, animated: true)
+        mapView.setRegion(bostonSalemRegion, animated: true)
         switch sender.selectedSegmentIndex {
         case 1:
             mapView.mapType = MKMapType.SatelliteFlyover
@@ -127,15 +139,17 @@ class ViewController: UIViewController, MKMapViewDelegate {
         print("didSingle")
         // get tap location
         let gesturePoint = gestureRecognizer.locationInView(mapView)
-        let mapPoint = mapView.convertPoint(gesturePoint, toCoordinateFromView: mapView)
+        let mapPoint: CLLocationCoordinate2D = mapView.convertPoint(gesturePoint, toCoordinateFromView: mapView)
         print(mapPoint)
-        let tapcircle = MKCircle(centerCoordinate: mapPoint, radius: CLLocationDistance(ViewController.milesToMeters(radiusInMiles)))
-        mapView.removeOverlays(overlays)
-        overlays = [MKOverlay]()
-        overlays.append(tapcircle)
-        centers = [CLLocationCoordinate2D]()
-        centers.append(mapPoint)
-        mapView.addOverlay(tapcircle)
+        destinations.append(mapPoint)
+        let annod = MKPointAnnotation()
+        let n = destinations.count
+        annod.title = "J" + "\(n)"
+        //TODO put as-the-crow-flies distance in subtitle
+        annod.subtitle = ""
+        annod.coordinate = mapPoint
+
+        mapView.addAnnotation(annod)
     }
     
     // MARK: - delegate
