@@ -21,12 +21,12 @@ class RadiusEditViewController: UIViewController {
     }
     
     @IBAction func sliderChanged(sender: UISlider) {
-        radius = sender.value
+        radius = slider.value
         valueLabel.text = "\(radius)"
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let nextVC = segue.destinationViewController as! ViewController
-        nextVC.radiusInMiles = radius
+        nextVC.radiusInMiles = Double(radius)
     }
 }

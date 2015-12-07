@@ -17,7 +17,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     let adams269 = CLLocationCoordinate2DMake(42.356476, -71.197761)
     let lafayette260 = CLLocationCoordinate2DMake(42.509920, -70.892136)
     
-    var radiusInMiles: Float = 7.0
+    var radiusInMiles: Double = 7.0
     var centers = [CLLocationCoordinate2D]()
     var destinations = [CLLocationCoordinate2D]()
     var overlays = [MKOverlay]()
@@ -37,6 +37,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         MKCoordinateSpanMake(0.6, 0.6))
     
     var workingRegion: MKCoordinateRegion!
+    var selectedPinView: MKAnnotationView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +48,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        editRadiusBtn.setTitle("Radius: \(radiusInMiles) mi", forState: UIControlState.Normal)
+        let rounded = roundToTenth(radiusInMiles)
+        editRadiusBtn.setTitle("Radius: \(rounded) mi", forState: UIControlState.Normal)
    }
     
     override func didReceiveMemoryWarning() {
@@ -56,8 +58,12 @@ class ViewController: UIViewController, MKMapViewDelegate {
     }
     
     // static method
-    class func milesToMeters( miles: Float ) -> Float {
+    class func milesToMeters( miles: Double ) -> Double {
         return miles * 5280.0 / 3.2808
+    }
+    
+    func roundToTenth( afloat: Double ) ->Double {
+        return (round( 10 * afloat) / 10.0)
     }
     
     func initMap () {
@@ -115,7 +121,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     @IBAction func segmentChanged(sender: UISegmentedControl) {
         
-        mapView.setRegion(bostonSalemRegion, animated: true)
+        mapView.setRegion(workingRegion, animated: true)
         switch sender.selectedSegmentIndex {
         case 1:
             mapView.mapType = MKMapType.SatelliteFlyover
@@ -131,7 +137,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let nextVC: RadiusEditViewController = segue.destinationViewController as! RadiusEditViewController
-        nextVC.radius = radiusInMiles
+        nextVC.radius = Float(radiusInMiles)
         
     }
     
@@ -146,9 +152,14 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let n = destinations.count
         annod.title = "J" + "\(n)"
         //TODO put as-the-crow-flies distance in subtitle
-        annod.subtitle = ""
+        // distance between two map coords
+        let meters = MKMetersBetweenMapPoints(MKMapPointForCoordinate(mapPoint), MKMapPointForCoordinate(lafayette260))
+        let miles = roundToTenth( meters * 3.2808 / 5280.0 )
+        
+        annod.subtitle = "\(miles) mi"
         annod.coordinate = mapPoint
 
+        
         mapView.addAnnotation(annod)
     }
     
