@@ -37,7 +37,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         MKCoordinateSpanMake(0.6, 0.6))
     
     var workingRegion: MKCoordinateRegion!
-    var selectedPinView: MKAnnotationView!
+    var selectedAnnotation: MKAnnotation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -151,7 +151,6 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let annod = MKPointAnnotation()
         let n = destinations.count
         annod.title = "J" + "\(n)"
-        //TODO put as-the-crow-flies distance in subtitle
         // distance between two map coords
         let meters = MKMetersBetweenMapPoints(MKMapPointForCoordinate(mapPoint), MKMapPointForCoordinate(lafayette260))
         let miles = roundToTenth( meters * 3.2808 / 5280.0 )
@@ -159,10 +158,16 @@ class ViewController: UIViewController, MKMapViewDelegate {
         annod.subtitle = "\(miles) mi"
         annod.coordinate = mapPoint
 
-        
         mapView.addAnnotation(annod)
+        // must add it first
+        openAnnotation(annod)
+        selectedAnnotation = annod
     }
     
+    func openAnnotation(annotation: MKAnnotation) {
+            mapView.selectAnnotation(annotation, animated: false)
+    }
+
     // MARK: - delegate
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
@@ -172,6 +177,43 @@ class ViewController: UIViewController, MKMapViewDelegate {
             circle.lineWidth = 1
             return circle
     }
+    
+//    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+//        var pinView: MKAnnotationView?
+//        if let pinView = mapView.dequeueReusableAnnotationViewWithIdentifier("queryplaces") {
+//            
+//        } else {
+//            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "queryplaces")
+//        
+//        }
+//        
+//        
+//        return pinView
+//    }
+    
+    
+    
+    
+    
+    
+    
+    
+    /*
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+    MKPinAnnotationView *pinView = (MKPinAnnotationView*)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"Prospects"];
+    if ([annotation isKindOfClass:[MKUserLocation class]]){
+    return nil;  //return nil to use default blue dot view
+    }
+    else if(pinView == nil) {
+    
+    pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Prospects"];
+    pinView.pinColor = MKPinAnnotationColorPurple;
+    pinView.animatesDrop = YES;
+    pinView.draggable = NO;
+    }
+    return pinView;
+    }
+*/
 }
 
 
