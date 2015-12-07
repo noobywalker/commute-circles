@@ -6,7 +6,6 @@
 //  Created by Ray Swartz on 10/1/15.
 //  Copyright © 2015 Swartzware. All rights reserved.
 //
-//  Should I use MKMapCamera?
 //
 
 import UIKit
